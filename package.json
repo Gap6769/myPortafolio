@@ -1,0 +1,35 @@
+{
+  "name": "myportafolio",
+  "version": "1.0.0",
+  "description": "Portafolio website project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gap6769/myPortafolio.git"
+  },
+  "keywords": [
+    "portafolio",
+    "resume",
+    "david",
+    "aviles"
+  ],
+  "author": "David Aviles",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gap6769/myPortafolio/issues"
+  },
+  "homepage": "https://github.com/Gap6769/myPortafolio#readme",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.2",
+    "express-session": "^1.17.2",
+    "html": "^1.0.0",
+    "method-override": "^3.0.0",
+    "path": "^0.12.7"
+  }
+}

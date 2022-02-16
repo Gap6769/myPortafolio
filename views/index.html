@@ -26,7 +26,7 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
 
   <!-- =======================================================
@@ -50,7 +50,8 @@
       <ul>
         <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
         <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>¿Quien soy?</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Curriculum</span></a></li>
+        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Curriculum</span></a>
+        </li>
         </li>
         <li><a href="#services" class="nav-link scrollto"><i class="bx bx-server"></i> <span>Servicios</span></a></li>
         <li><a href="#contact" class="nav-link scrollto"><i class="bx bx-envelope"></i> <span>Contacto</span></a></li>
@@ -107,7 +108,7 @@
 
               <div class="col-lg-6">
 
-                </ul> 
+                </ul>
               </div>
             </div>
             <p>
@@ -301,7 +302,12 @@
 
             <h3 class="resume-title">Hábilidades Relevantes</h3>
             <div class="resume-item">
-              <h5>orientación al Logro</h5> <h5>Inglés C1 </h5><h5> Comunicación Asertiva </h5><h5>Team Player</h5><h5> Autodidacta </h5> <h5>Pensamiento critico</h5>
+              <h5>orientación al Logro</h5>
+              <h5>Inglés C1 </h5>
+              <h5> Comunicación Asertiva </h5>
+              <h5>Team Player</h5>
+              <h5> Autodidacta </h5>
+              <h5>Pensamiento critico</h5>
             </div>
           </div>
           <div class="col-lg-6">
@@ -311,8 +317,10 @@
               <h5>09/2020 - 10/2021</h5>
               <p><em> Salesland </em></p>
               <ul>
-                <li>Expandir relaciones comerciales, mediante la construcción de base de datos de potenciales clientes.</li>
-                <li>Generar nuevas relaciones comerciales mediante prospección telefónica, practiando una escucha activa para facilitar la detección de necesitades.</li>
+                <li>Expandir relaciones comerciales, mediante la construcción de base de datos de potenciales clientes.
+                </li>
+                <li>Generar nuevas relaciones comerciales mediante prospección telefónica, practiando una escucha activa
+                  para facilitar la detección de necesitades.</li>
             </div>
             <div class="resume-item">
               <h4>Co-fundador</h4>
@@ -367,7 +375,7 @@
                 </svg>
                 <i class="bx bxl-dribbble"></i>
               </div>
-              <h4><a href="">Desarrollo de aplicaciones</a></h4>
+              <h4><a href="#form">Desarrollo de aplicaciones</a></h4>
               <p>Ya sea de escritorio, movil o web, tu idea llevada a cabo de manera simple y optimizada.</p>
             </div>
           </div>
@@ -383,7 +391,7 @@
                 </svg>
                 <i class="bx bx-file"></i>
               </div>
-              <h4><a href="">Documentación</a></h4>
+              <h4><a href="#form">Documentación</a></h4>
               <p>Documentamos y refracionamos tu codigo, facilitando la lectura de este. Además, añadiendo contingencias
                 para los errores.</p>
             </div>
@@ -400,7 +408,7 @@
                 </svg>
                 <i class="bx bx-tachometer"></i>
               </div>
-              <h4><a href="">Automatización de Tareas</a></h4>
+              <h4><a href="#form">Automatización de Tareas</a></h4>
               <p> ¿Algun proceso lento y repetitivo? ¡Vamos a automatizarlo!</p>
             </div>
           </div>
@@ -461,25 +469,40 @@
               <div class="form-group mt-3">
                 <textarea class="form-control" name="message" rows="5" placeholder="Cuentame!" id="message"
                   required></textarea>
-
               </div>
               <input type="hidden" name="_captcha" value="false">
               <div class="my-3">
                 <div class="loading">Cargando</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Tu mensaje a sido enviado, pronto me contactaré contigo!</div>
+                <div class="sent-message"></div>
               </div>
-              <div class="text-center"><button id='submit' type="submit">Enviar Mensaje</button></div>
+              <div class="text-center"><button id='submit' type="submit">Enviar Mensaje</button></div><br>
+
+              <div id="liveAlertPlaceholder"></div>
+              
             </form>
-
+           
           </div>
-
+          
         </div>
 
       </div>
     </section><!-- End Contact Section -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
+
+      var alertPlaceholder = document.getElementById('liveAlertPlaceholder')
+      function alert(message, type) {
+        var wrapper = document.createElement('div')
+        wrapper.innerHTML = '<div class="alert alert-' + type + ' alert-dismissible" role="alert">' + message + '<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button></div>'
+        alertPlaceholder.append(wrapper)
+      }
+
+      function alertEmail(data) {
+        console.log(data);
+        alert('Tu mensaje a sido enviado, pronto me contactaré contigo!', 'success');
+      }
+
       $('#form').submit(function (e) {
         e.preventDefault();
         let name = document.getElementById("name").value
@@ -502,7 +525,7 @@
             subject: subject,
             message: message,
           },
-          success: (data) => console.log(data),
+          success: (data) => alertEmail(data),
           error: (err) => console.log(err),
           complete: function () {
             console.log('terminado')

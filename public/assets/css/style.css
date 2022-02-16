@@ -327,6 +327,26 @@ section {
   position: relative;
   color: #45505b;
 }
+.cvsection-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  position: relative;
+  color: #45505b;
+}
+.cvsection-title h4 {
+  line-height: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: #0563bb;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+
+}
 .section-title h2::before {
   content: "";
   position: absolute;
@@ -379,6 +399,14 @@ section {
 }
 .about .content p:last-child {
   margin-bottom: 0;
+}
+.about .social-links a {
+  font-size: 24px;
+  display: inline-block;
+  color: #45505b;
+  line-height: 1;
+  margin-right:40px;
+  transition: 0.3s;
 }
 
 /*--------------------------------------------------------------

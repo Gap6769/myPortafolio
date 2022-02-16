@@ -499,6 +499,7 @@
       }
 
       function alertEmail(data) {
+        $('form').trigger('reset')
         console.log(data);
         alert('Tu mensaje a sido enviado, pronto me contactaré contigo!', 'success');
       }
